@@ -91,7 +91,7 @@ void Account::_displayTimestamp()
 	std::time_t t;
     std::tm* now;
 
-	t = std::time(nullptr);
+	t = std::time(NULL);
 	now = std::localtime(&t);
 	std::cout << "[" << (now->tm_year + 1900)
               << (now->tm_mon + 1)

@@ -12,7 +12,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
         if (other.materia[i]) {
             materia[i] = other.materia[i]->clone();
         } else {
-            materia[i] = nullptr;
+            materia[i] = NULL;
         }
     }
     std::cout << "MateriaSource copy constructor called" << std::endl;
@@ -43,7 +43,7 @@ AMateria* MateriaSource::createMateria(const std::string& type) {
         }
     }
     std::cout << "Materia of type " << type << " not found." << std::endl;
-    return nullptr;
+    return NULL;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
@@ -53,7 +53,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
             if (other.materia[i]) {
                 materia[i] = other.materia[i]->clone();
             } else {
-                materia[i] = nullptr;
+                materia[i] = NULL;
             }
         }
     }

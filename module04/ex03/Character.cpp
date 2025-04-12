@@ -2,14 +2,14 @@
 
 Character::Character() : name("Default"), inventoryCount(0) {
     for (int i = 0; i < 4; ++i) {
-        inventory[i] = nullptr;
+        inventory[i] = NULL;
     }
     std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(const std::string& name) : name(name), inventoryCount(0) {
     for (int i = 0; i < 4; ++i) {
-        inventory[i] = nullptr;
+        inventory[i] = NULL;
     }
     std::cout << "Character constructor called" << std::endl;
 }
@@ -17,9 +17,9 @@ Character::Character(const std::string& name) : name(name), inventoryCount(0) {
 Character::Character(const Character& other) : name(other.name), inventoryCount(other.inventoryCount) {
     for (int i = 0; i < 4; ++i) {
         if (other.inventory[i]) {
-            inventory[i] ? other.inventory[i]->clone() : nullptr;
+            inventory[i] ? other.inventory[i]->clone() : NULL;
         } else {
-            inventory[i] = nullptr;
+            inventory[i] = NULL;
         }
     }
     std::cout << "Character copy constructor called" << std::endl;
@@ -40,7 +40,7 @@ Character& Character::operator=(const Character& other) {
             if (other.inventory[i]) {
                 inventory[i] = other.inventory[i]->clone();
             } else {
-                inventory[i] = nullptr;
+                inventory[i] = NULL;
             }
         }
     }
@@ -59,7 +59,7 @@ void Character::unequip(int idx) {
         for (int i = idx; i < inventoryCount - 1; ++i) {
             inventory[i] = inventory[i + 1];
         }
-        inventory[inventoryCount - 1] = nullptr;
+        inventory[inventoryCount - 1] = NULL;
         --inventoryCount;
     }
 }
